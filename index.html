@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Người Anh Yêu Thương ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="main-heart" onclick="createBurst()">❤️</div>
+        <h1>Gửi bé Của Anh!</h1>
+        <p>Hôm nay anh không biết nói gì hơn ngoài việc muốn cho em biết rằng em là điều tuyệt vời nhất xuất hiện trong cuộc đời anh. Cảm ơn em đã luôn ở bên, mang lại nụ cười và sự ấm áp cho anh mỗi ngày.</p>
+        
+        <button class="btn" onclick="revealMessage()">Bấm vào đây đi</button>
+        
+        <div class="hidden-message" id="secretMessage">
+            "Yêu em nhiều hơn ngày hôm qua, nhưng ít hơn ngày mai! Chúc em luôn hạnh phúc khi ở bên anh nhé! 🥰"
+        </div>
+    </div>
+
+    <script>
+        // Hàm tạo hiệu ứng trái tim rơi ngẫu nhiên
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-fall');
+            heart.innerText = '❤️';
+            
+            // Vị trí ngẫu nhiên theo chiều ngang
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            // Kích thước ngẫu nhiên
+            const size = Math.random() * 15 + 10;
+            heart.style.fontSize = size + 'px';
+            
+            // Tốc độ rơi ngẫu nhiên
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            
+            // Độ mờ ngẫu nhiên
+            heart.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            document.body.appendChild(heart);
+            
+            // Xóa trái tim sau khi rơi xong để tránh nặng máy
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tạo trái tim rơi liên tục mỗi 300ms
+        setInterval(createHeart, 300);
+
+        // Hiển thị lời nhắn bí mật
+        function revealMessage() {
+            const message = document.getElementById('secretMessage');
+            if (message.style.display === 'block') {
+                message.style.display = 'none';
+            } else {
+                message.style.display = 'block';
+                createBurst();
+            }
+        }
+
+        // Hiệu ứng bùng nổ trái tim khi click vào tim lớn hoặc nút
+        function createBurst() {
+            for(let i=0; i<10; i++) {
+                setTimeout(createHeart, i * 50);
+            }
+        }
+    </script>
+</body>
+</html>
