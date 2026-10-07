@@ -13,7 +13,6 @@ body {
     overflow: hidden;
     perspective: 1000px;
 }
-
 /* Hiệu ứng trái tim rơi */        
 .heart-fall {
     position: absolute;
@@ -25,7 +24,6 @@ body {
     z-index: 1;
     user-select: none;
 }
-
 @keyframes fall {
     0% {
         transform: translateY(-10vh) rotate(0deg);
@@ -36,7 +34,6 @@ body {
         opacity: 0;
     }
 }
-
 /* Hộp thư tình */
 .card {
     background: rgba(255, 255, 255, 0.85);
@@ -52,7 +49,6 @@ body {
     transform: translateY(0);
     transition: all 0.5s ease;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(255, 77, 109, 0.3);
@@ -64,7 +60,6 @@ body {
     display: inline-block;
     animation: beat 1.2s infinite;
 }
-
 @keyframes beat {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.15); }
@@ -74,14 +69,12 @@ h1 {
     margin: 20px 0 15px;
     font-size: 26px;
 }
-
 p {
     color: #4a4a4a;
     line-height: 1.6;
     font-size: 16px;
     margin-bottom: 25px;
 }
-
 /* Nút bấm bí mật */
 .btn {
     background: #ff4d6d;
@@ -95,12 +88,10 @@ p {
     box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
     transition: 0.3s;
 }
-
 .btn:hover {
     background: #ff758f;
     transform: scale(1.05);
 }
-
 /* Lời nhắn ẩn */
 .hidden-message {
     display: none;
@@ -113,7 +104,6 @@ p {
     font-weight: 500;
     animation: fadeIn 0.8s ease forwards;
 }
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
